@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rass_education.databinding.ActivityLoginBinding
+import com.example.rass_education.tugas_p4.PageContract
 
 class LoginActivity : AppCompatActivity() {
 
@@ -16,8 +17,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
-            // Pindah ke WelcomeActivity
-            val intent = Intent(this, WelcomeActivity::class.java)
+            // Setelah login, masuk ke halaman utama di WelcomeActivity
+            val intent = Intent(this, WelcomeActivity::class.java).apply {
+                putExtra(PageContract.EXTRA_SHOW_LOGIN_SUCCESS, true)
+            }
             startActivity(intent)
         }
     }

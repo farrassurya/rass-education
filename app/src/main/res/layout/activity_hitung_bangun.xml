@@ -12,6 +12,16 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <ImageButton
+            android:id="@+id/btnBackBangunMain"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/p4_back"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="@color/p4_text_primary" />
+
         <!-- ================= HOME / MENU UTAMA ================= -->
         <LinearLayout
             android:id="@+id/layoutMenu"
@@ -21,8 +31,18 @@
             android:visibility="visible">
 
             <TextView
+                android:id="@+id/tvSourceTitleBangun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Judul dari halaman utama"
+                android:textColor="@color/p4_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif-black"
                 android:text="Hitung Bangun Ruang"
                 android:textColor="#2D3436"

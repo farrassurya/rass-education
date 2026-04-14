@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.example.rass_education.R
+import com.example.rass_education.tugas_p4.PageContract
 
 class HitungBangunActivity : AppCompatActivity() {
 
@@ -20,6 +21,16 @@ class HitungBangunActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hitung_bangun)
+
+        val sourceTitle = intent.getStringExtra(PageContract.EXTRA_PAGE_TITLE)
+            ?: getString(R.string.p4_home_title)
+        val sourceDescription = intent.getStringExtra(PageContract.EXTRA_PAGE_DESCRIPTION)
+            ?: getString(R.string.p4_home_description)
+
+        findViewById<TextView>(R.id.tvSourceTitleBangun).text = sourceTitle
+        findViewById<ImageButton>(R.id.btnBackBangunMain).setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
         // 1. Inisialisasi Layout Container (Biar bisa disembunyiin/tampilin)
         val layoutMenu = findViewById<LinearLayout>(R.id.layoutMenu)

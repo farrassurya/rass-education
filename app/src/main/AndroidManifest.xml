@@ -26,6 +26,14 @@
             android:exported="false" />
 
         <activity
+            android:name=".tugas_p4.Custom2Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".tugas_p4.Custom1Activity"
+            android:exported="false" />
+
+        <activity
             android:name=".tugas_p2.HitungBangunActivity"
             android:exported="false" />
 

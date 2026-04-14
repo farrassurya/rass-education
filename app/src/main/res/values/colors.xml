@@ -2,8 +2,25 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="mint_primary">#5CD1B3</color>
-    <color name="mint_light">#B2E7D8</color>
-    <color name="text_dark">#1A1A1A</color>
-    <color name="bg_gray">#F5F5F5</color>
+
+    <!-- Legacy colors used in previous assignments -->
+    <color name="mint_primary">#63CDBF</color>
+    <color name="mint_light">#D9F3EE</color>
+    <color name="text_dark">#2E2F3A</color>
+    <color name="bg_gray">#ECECEE</color>
+
+    <!-- P4 palette -->
+    <color name="p4_primary">#63CDBF</color>
+    <color name="p4_on_primary">#FFFFFF</color>
+    <color name="p4_secondary">#CFF1EB</color>
+    <color name="p4_on_secondary">#2E6F67</color>
+    <color name="p4_tertiary">#E7F7F4</color>
+    <color name="p4_on_tertiary">#2A5550</color>
+    <color name="p4_background">#ECECEE</color>
+    <color name="p4_surface">#FFFFFF</color>
+    <color name="p4_border">#D5DFDD</color>
+    <color name="p4_text_primary">#2F3140</color>
+    <color name="p4_text_secondary">#6D7284</color>
+    <color name="p4_error">#E45B5B</color>
+    <color name="p4_on_error">#FFFFFF</color>
 </resources>

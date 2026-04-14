@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">rass-education</string>
+    <string name="p4_home_title">Welcome Farrassurya!</string>
+    <string name="p4_home_description">Pilih menu favoritmu untuk belajar hari ini.</string>
+    <string name="p4_logout_title">Konfirmasi Logout</string>
+    <string name="p4_logout_message">Apakah kamu yakin ingin logout dari akun ini?</string>
+    <string name="p4_logout_yes">Iya, logout</string>
+    <string name="p4_logout_no">Batal</string>
+    <string name="p4_logout_cancelled">Logout dibatalkan</string>
+    <string name="p4_login_success">Berhasil Login</string>
+    <string name="p4_back">Kembali</string>
 </resources>

@@ -15,32 +15,32 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/text_dark"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/montserrat_black" />
+        android:layout_marginTop="40dp" />
 
+    <!-- // MODIF: Logo Bina Desa -->
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/image"
+        android:src="@drawable/logo_bindes"
         android:layout_marginVertical="30dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="Username"
         android:textStyle="bold"
         android:textColor="@color/text_dark" />
 
+    <!-- // MODIF: etUsername -->
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/bg_input"
-        android:hint="farrassurya12@gmail.com"
+        android:hint="Username"
         android:paddingHorizontal="15dp"
         android:layout_marginTop="8dp"
-        android:inputType="textEmailAddress" />
+        android:inputType="text" />
 
     <TextView
         android:layout_width="match_parent"
@@ -54,12 +54,12 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/bg_input"
         android:hint="************"
         android:paddingHorizontal="15dp"
         android:layout_marginTop="8dp"
         android:inputType="textPassword" />
 
+    <!-- // UPDATE: Warna tombol oren -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:backgroundTint="@color/mint_primary"
+        android:backgroundTint="@color/orange_primary"
         app:cornerRadius="15dp"
         android:layout_marginTop="40dp" />
 

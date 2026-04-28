@@ -3,13 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Legacy colors used in previous assignments -->
-    <color name="mint_primary">#63CDBF</color>
-    <color name="mint_light">#D9F3EE</color>
+    <!-- // MODIF: Tema Bina Desa (Putih-Oren) -->
+    <color name="orange_primary">#D49B35</color>
+    <color name="orange_dark">#A6731E</color>
+    <color name="orange_light">#F9EED9</color>
+
+    <!-- Legacy colors -->
     <color name="text_dark">#2E2F3A</color>
     <color name="bg_gray">#ECECEE</color>
 
-    <!-- P4 palette -->
+    <!-- // UPDATE: Restore P4 colors to fix resource linking errors -->
     <color name="p4_primary">#63CDBF</color>
     <color name="p4_on_primary">#FFFFFF</color>
     <color name="p4_secondary">#CFF1EB</color>
@@ -23,4 +26,8 @@
     <color name="p4_text_secondary">#6D7284</color>
     <color name="p4_error">#E45B5B</color>
     <color name="p4_on_error">#FFFFFF</color>
+
+    <!-- // MODIF: Keep legacy mint for safety -->
+    <color name="mint_primary">#63CDBF</color>
+    <color name="mint_light">#D9F3EE</color>
 </resources>

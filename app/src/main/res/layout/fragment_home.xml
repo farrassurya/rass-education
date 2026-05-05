@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- // MODIF: Header Oren dengan Foto Profil RASS -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/orange_primary">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rass"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                app:strokeColor="@color/white"
+                app:strokeWidth="4dp" />
+
+            <TextView
+                android:id="@+id/tvWelcomeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivProfile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Welcome Farrassurya!"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tasks List"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Tasks"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- Learn programming by 12am\n- Pick up kids by 2pm"
+                        android:textColor="#333333" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Quick Actions"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRumus"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:text="Rumus Bangun Ruang"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/orange_primary"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_preferences"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFocus"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:text="Zona Focus"
+                android:textAllCaps="false"
+                android:textColor="@color/orange_primary"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_gallery"
+                app:iconTint="@color/orange_primary"
+                app:strokeColor="@color/orange_primary"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnInspirasi"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:text="Inspirasi Belajar"
+                android:textAllCaps="false"
+                android:textColor="@color/orange_primary"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_share"
+                app:iconTint="@color/orange_primary"
+                app:strokeColor="@color/orange_primary"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWebView"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:text="Pertanahan - BinaDesa"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/orange_primary"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_search"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="#E45B5B"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_lock_power_off"
+                app:iconTint="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

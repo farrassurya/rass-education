@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- // BARU: Layout Fragment About -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAbout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/orange_primary"
+        app:title="About Bina Desa"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bina Desa: Sistem Pertanahan"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Aplikasi ini dirancang untuk membantu pengelolaan data pertanahan secara digital, transparan, dan akurat untuk masyarakat desa."
+            android:textSize="16sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Fitur Utama:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="• Pemetaan Lahan Digital\n• Database Terintegrasi\n• Keamanan Data Terjamin\n• Akses Real-Time melalui Web View"
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+</LinearLayout>

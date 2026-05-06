@@ -1,4 +1,4 @@
-package com.example.rass_education.tugas_p3
+package com.example.rass_education.tugas_p7
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.rass_education.databinding.FragmentHomeBinding
 import com.example.rass_education.tugas_p2.HitungBangunActivity
+import com.example.rass_education.tugas_p3.LoginActivity
+import com.example.rass_education.tugas_p6.WebViewActivity
 import com.example.rass_education.tugas_p4.Custom1Activity
 import com.example.rass_education.tugas_p4.Custom2Activity
 

@@ -1,4 +1,4 @@
-package com.example.rass_education.tugas_p3
+package com.example.rass_education.tugas_p6
 
 import android.os.Bundle
 import android.webkit.WebViewClient

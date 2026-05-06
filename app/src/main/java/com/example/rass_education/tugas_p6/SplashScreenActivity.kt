@@ -1,12 +1,13 @@
-package com.example.rass_education.tugas_p3
+package com.example.rass_education.tugas_p6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rass_education.R
+import com.example.rass_education.tugas_p3.LoginActivity
+import com.example.rass_education.tugas_p3.WelcomeActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         // // BARU: SplashScreen dengan delay 2 detik
         Handler(Looper.getMainLooper()).postDelayed({
-            val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             // Logic: Cek isLogin

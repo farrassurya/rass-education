@@ -1,4 +1,4 @@
-package com.example.rass_education.tugas_p3
+package com.example.rass_education.tugas_p7
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,7 +24,7 @@ class AboutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
         // // BARU: Set Toolbar Title
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbarAbout)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "About Bina Desa"

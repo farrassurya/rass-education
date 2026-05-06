@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.rass_education.R
 import com.example.rass_education.databinding.ActivityWelcomeBinding
+import com.example.rass_education.tugas_p7.AboutFragment
+import com.example.rass_education.tugas_p7.HomeFragment
+import com.example.rass_education.tugas_p7.ProfileFragment
 
 class WelcomeActivity : AppCompatActivity() {
 

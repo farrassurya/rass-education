@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- // MODIF: Tambah permission internet untuk WebView -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,46 +13,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rasseducation">
-
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
         <!-- // MODIF: SplashScreen sebagai Launcher -->
         <activity
-            android:name=".tugas_p3.SplashScreenActivity"
+            android:name=".tugas_p6.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- // UPDATE: Register Activity lainnya -->
+        <!-- // BARU: Register & Verifikasi Activity -->
+        <activity
+            android:name=".UTS.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UTS.VerifikasiActivity"
+            android:exported="false" />
+
         <activity
             android:name=".tugas_p3.LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".tugas_p3.WelcomeActivity"
             android:exported="false" />
-
         <activity
-            android:name=".tugas_p3.WebViewActivity"
+            android:name=".tugas_p6.WebViewActivity"
             android:exported="false" />
-
         <activity
             android:name=".tugas_p4.Custom2Activity"
             android:exported="false" />
-
         <activity
             android:name=".tugas_p4.Custom1Activity"
             android:exported="false" />
-
         <activity
             android:name=".tugas_p2.HitungBangunActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.rass_education.UTS.RegisterActivity
 import com.example.rass_education.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -16,16 +17,28 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // // BARU: Navigasi ke RegisterActivity
+        binding.tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
 
-            // // UPDATE: Logic Login & Shared Preferences
-            if (username.isNotEmpty() && password.isNotEmpty()) {
-                val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+            // // MODIF: Logic Login berdasarkan soal
+            val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+            val savedUsername = sharedPref.getString("username", "")
+            val savedPassword = sharedPref.getString("password", "")
+
+            val isValidOldRule = username == password && username.isNotEmpty()
+            val isValidSavedData = username == savedUsername && password == savedPassword && username.isNotEmpty()
+
+            if (isValidOldRule || isValidSavedData) {
+                // // UPDATE: Simpan status login
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
                 editor.apply()
 
                 val intent = Intent(this, WelcomeActivity::class.java)
@@ -35,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 // // UPDATE: AlertDialog jika salah/kosong
                 AlertDialog.Builder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Silahkan coba lagi")
+                    .setMessage("Username atau Password salah")
                     .setPositiveButton("OK", null)
                     .show()
             }

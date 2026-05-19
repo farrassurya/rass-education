@@ -8,6 +8,7 @@ import com.example.rass_education.databinding.ActivityWelcomeBinding
 import com.example.rass_education.tugas_p7.AboutFragment
 import com.example.rass_education.tugas_p7.HomeFragment
 import com.example.rass_education.tugas_p7.ProfileFragment
+import com.example.rass_education.tugas_p9.SettingsFragment
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -35,6 +36,11 @@ class WelcomeActivity : AppCompatActivity() {
                 }
                 R.id.nav_profile -> {
                     replaceFragment(ProfileFragment())
+                    true
+                }
+                // // REVISI: Tambahkan navigasi ke Settings yang sebelumnya terlewat
+                R.id.nav_settings -> {
+                    replaceFragment(SettingsFragment())
                     true
                 }
                 else -> false

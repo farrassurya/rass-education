@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- // MODIF: Header Oren dengan Foto Profil RASS -->
+        <!-- // MODIF: Header dengan Background Drawable Gradient -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:background="@color/orange_primary">
+            android:background="@drawable/bg_gradient_orange">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivProfile"
@@ -49,111 +49,188 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tasks List"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <androidx.cardview.widget.CardView
+            <!-- // MODIF: TextInputLayout Pencarian -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="2dp">
+                android:hint="Cari No. Sertifikat / Nama Pemilik"
+                app:boxStrokeColor="@color/orange_primary"
+                app:hintTextColor="@color/orange_primary"
+                app:startIconDrawable="@android:drawable/ic_menu_search">
 
-                <LinearLayout
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="15dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Daily Tasks"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="- Learn programming by 12am\n- Pick up kids by 2pm"
-                        android:textColor="#333333" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Quick Actions"
+                android:text="Status Proyek Bina Desa"
                 android:textColor="#333333"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRumus"
+            <!-- // REVISI: ChipGroup Aktif & Bisa Ditekan -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupStatus"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <!-- // REVISI: Logo Chip Aktif diganti ke ic_menu_edit (Bukan mic lagi) -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipActive"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:checked="true"
+                    android:text="Aktif"
+                    app:chipIcon="@android:drawable/ic_menu_edit"
+                    app:chipIconVisible="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPending"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Tertunda"
+                    app:chipIcon="@android:drawable/ic_menu_recent_history"
+                    app:chipIconVisible="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFinished"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Selesai"
+                    app:chipIcon="@android:drawable/checkbox_on_background"
+                    app:chipIconVisible="true" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Daftar Tugas Hari Ini"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- // MODIF: Cardview dengan Background Drawable -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Rumus Bangun Ruang"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/orange_primary"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_preferences"
-                app:iconTint="@color/white" />
+                android:background="@drawable/bg_card_white"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="15dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFocus"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="8dp"
-                android:text="Zona Focus"
-                android:textAllCaps="false"
-                android:textColor="@color/orange_primary"
-                app:backgroundTint="@color/white"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_gallery"
-                app:iconTint="@color/orange_primary"
-                app:strokeColor="@color/orange_primary"
-                app:strokeWidth="1dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prioritas Utama"
+                    android:textColor="@color/orange_primary"
+                    android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnInspirasi"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="8dp"
-                android:text="Inspirasi Belajar"
-                android:textAllCaps="false"
-                android:textColor="@color/orange_primary"
-                app:backgroundTint="@color/white"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_share"
-                app:iconTint="@color/orange_primary"
-                app:strokeColor="@color/orange_primary"
-                app:strokeWidth="1dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="- Verifikasi dokumen fisik di Balai Desa\n- Input data koordinat peta bidang"
+                    android:textColor="#333333" />
+            </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnWebView"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Aksi Cepat"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="8dp"
-                android:text="Pertanahan - BinaDesa"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/orange_primary"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_search"
-                app:iconTint="@color/white" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRumus"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Rumus Lahan"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/orange_primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_home"
+                    app:iconTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFocus"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Zona Pantau"
+                    android:textColor="@color/orange_primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_home"
+                    app:iconTint="@color/orange_primary"
+                    app:strokeColor="@color/orange_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnInspirasi"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Galeri Desa"
+                    android:textColor="@color/orange_primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_info"
+                    app:iconTint="@color/orange_primary"
+                    app:strokeColor="@color/orange_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnWebView"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Portal Web"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/orange_primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_info"
+                    app:iconTint="@color/white" />
+
+            </GridLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="8dp"
-                android:text="Logout"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="20dp"
+                android:text="Keluar Aplikasi"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:backgroundTint="#E45B5B"

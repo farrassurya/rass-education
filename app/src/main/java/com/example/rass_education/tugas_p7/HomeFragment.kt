@@ -14,6 +14,7 @@ import com.example.rass_education.tugas_p3.LoginActivity
 import com.example.rass_education.tugas_p6.WebViewActivity
 import com.example.rass_education.tugas_p4.Custom1Activity
 import com.example.rass_education.tugas_p4.Custom2Activity
+import com.example.rass_education.tugas_10.TabLayoutActivity
 
 class HomeFragment : Fragment() {
 
@@ -51,6 +52,10 @@ class HomeFragment : Fragment() {
 
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
+        }
+
+        binding.btnTabLayout.setOnClickListener {
+            startActivity(Intent(requireContext(), TabLayoutActivity::class.java))
         }
 
         // // MODIF: Pindahan Logic Logout

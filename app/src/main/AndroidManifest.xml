@@ -56,6 +56,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <!-- // BARU: TabLayout Activity Tugas 10 -->
+        <activity
+            android:name=".tugas_10.TabLayoutActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

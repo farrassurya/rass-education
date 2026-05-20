@@ -222,6 +222,20 @@
                     app:icon="@drawable/ic_info"
                     app:iconTint="@color/white" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTabLayout"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Tab Layout"
+                    android:textColor="@color/orange_primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_settings"
+                    app:iconTint="@color/orange_primary"
+                    app:strokeColor="@color/orange_primary" />
+
             </GridLayout>
 
             <com.google.android.material.button.MaterialButton

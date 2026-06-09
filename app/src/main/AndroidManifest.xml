@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- // MODIF: Tambah permission internet untuk WebView -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -39,6 +38,9 @@
             android:name=".tugas_p3.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".tugas_p11.OnboardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".tugas_p3.WelcomeActivity"
             android:exported="false" />
         <activity
@@ -59,7 +61,7 @@
 
         <!-- // BARU: TabLayout Activity Tugas 10 -->
         <activity
-            android:name=".tugas_10.TabLayoutActivity"
+            android:name=".tugas_p10.TabLayoutActivity"
             android:exported="false" />
     </application>
 

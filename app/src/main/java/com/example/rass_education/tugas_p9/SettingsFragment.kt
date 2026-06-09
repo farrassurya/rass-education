@@ -63,7 +63,8 @@ class SettingsFragment : Fragment() {
 
         // // BARU: Implementasi SimpleAdapter untuk tampilan yang lebih "keren"
         val from = arrayOf("icon", "title", "desc")
-        val to = intArrayOf(com.example.rass_education.R.id.ivSettingIcon, com.example.rass_education.R.id.tvSettingTitle, com.example.rass_education.R.id.tvSettingDesc)
+        val to = intArrayOf(com.example.rass_education.R.id.ivSettingIcon, com.example.rass_education.R.id.tvSettingTitle,
+            com.example.rass_education.R.id.tvSettingDesc)
 
         val adapter = SimpleAdapter(
             requireContext(),
@@ -78,7 +79,8 @@ class SettingsFragment : Fragment() {
         // // BARU: OnItemClickListener untuk ListView
         binding.lvSettings.setOnItemClickListener { _, _, position, _ ->
             val selectedTitle = items[position].first
-            Toast.makeText(requireContext(), "Membuka: $selectedTitle", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Membuka: $selectedTitle",
+                Toast.LENGTH_SHORT).show()
         }
     }
 

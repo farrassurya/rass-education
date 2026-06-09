@@ -9,4 +9,23 @@
     <string name="p4_logout_cancelled">Logout dibatalkan</string>
     <string name="p4_login_success">Berhasil Login</string>
     <string name="p4_back">Kembali</string>
+    <string name="p11_welcome_format">Welcome %1$s!</string>
+    <string name="p11_onboarding_header">Kenali fitur utama aplikasi</string>
+    <string name="p11_onboarding_title_1">Selamat Datang</string>
+    <string name="p11_onboarding_desc_1">Aplikasi ini membantu kamu mengakses fitur belajar dengan cepat dan sederhana.</string>
+    <string name="p11_onboarding_title_2">Pantau Informasi</string>
+    <string name="p11_onboarding_desc_2">Lihat berita terbaru dari sumber publik langsung di halaman utama.</string>
+    <string name="p11_onboarding_title_3">Siap Mulai</string>
+    <string name="p11_onboarding_desc_3">Tekan Ayo Mulai untuk masuk ke halaman login dan melanjutkan penggunaan aplikasi.</string>
+    <string name="p11_onboarding_start">Ayo Mulai</string>
+    <string name="p11_onboarding_skip">Lewati</string>
+    <string name="p11_onboarding_next">Lanjut</string>
+    <string name="p11_news_title">Berita Terbaru</string>
+    <string name="p11_news_loading">Memuat berita...</string>
+    <string name="p11_news_empty">Berita belum tersedia.</string>
+    <string name="p11_news_error">Gagal memuat berita. Coba lagi nanti.</string>
+    <string name="p11_news_source_prefix">Sumber</string>
+    <string name="p11_news_source_format">%1$s • %2$s</string>
+    <string name="p11_news_open_link">Buka berita</string>
+    <string name="p11_news_link_error">Link berita tidak bisa dibuka.</string>
 </resources>

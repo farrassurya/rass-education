@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/white"
+        android:foregroundGravity="center">
+
+        <ImageView
+            android:id="@+id/ivOnboardingIcon"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@android:drawable/ic_dialog_info"
+            android:tint="#E57A00"
+            tools:src="@android:drawable/ic_dialog_info" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvOnboardingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="#1F1F1F"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Selamat Datang" />
+
+    <TextView
+        android:id="@+id/tvOnboardingDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:textColor="#555555"
+        android:textSize="15sp"
+        tools:text="Aplikasi ini membantu kamu mengakses fitur belajar dengan cepat dan sederhana." />
+
+</LinearLayout>
+
+

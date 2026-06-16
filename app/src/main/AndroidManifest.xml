@@ -17,7 +17,7 @@
             android:exported="false" />
         <!-- // MODIF: SplashScreen sebagai Launcher -->
         <activity
-            android:name=".tugas_p6.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,32 +28,32 @@
 
         <!-- // BARU: Register & Verifikasi Activity -->
         <activity
-            android:name=".UTS.RegisterActivity"
+            android:name=".Home.UTS.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".UTS.VerifikasiActivity"
+            android:name=".Home.UTS.VerifikasiActivity"
             android:exported="false" />
 
         <activity
-            android:name=".tugas_p3.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".tugas_p11.OnboardingActivity"
+            android:name=".Home.tugas_p11.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".tugas_p3.WelcomeActivity"
+            android:name=".Home.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".tugas_p6.WebViewActivity"
+            android:name=".Home.tugas_p6.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".tugas_p4.Custom2Activity"
+            android:name=".Home.tugas_p4.Custom2Activity"
             android:exported="false" />
         <activity
-            android:name=".tugas_p4.Custom1Activity"
+            android:name=".Home.tugas_p4.Custom1Activity"
             android:exported="false" />
         <activity
-            android:name=".tugas_p2.HitungBangunActivity"
+            android:name=".Home.tugas_p2.HitungBangunActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -61,7 +61,7 @@
 
         <!-- // BARU: TabLayout Activity Tugas 10 -->
         <activity
-            android:name=".tugas_p10.TabLayoutActivity"
+            android:name=".Home.tugas_p10.TabLayoutActivity"
             android:exported="false" />
     </application>
 

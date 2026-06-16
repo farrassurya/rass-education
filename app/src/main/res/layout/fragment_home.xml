@@ -70,91 +70,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Status Proyek Bina Desa"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- // REVISI: ChipGroup Aktif & Bisa Ditekan -->
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroupStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:selectionRequired="true"
-                app:singleSelection="true">
-
-                <!-- // REVISI: Logo Chip Aktif diganti ke ic_menu_edit (Bukan mic lagi) -->
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipActive"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    android:checked="true"
-                    android:text="Aktif"
-                    app:chipIcon="@android:drawable/ic_menu_edit"
-                    app:chipIconVisible="true" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipPending"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    android:text="Tertunda"
-                    app:chipIcon="@android:drawable/ic_menu_recent_history"
-                    app:chipIconVisible="true" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFinished"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    android:text="Selesai"
-                    app:chipIcon="@android:drawable/checkbox_on_background"
-                    app:chipIconVisible="true" />
-            </com.google.android.material.chip.ChipGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Daftar Tugas Hari Ini"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- // MODIF: Cardview dengan Background Drawable -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_card_white"
-                android:elevation="4dp"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Prioritas Utama"
-                    android:textColor="@color/orange_primary"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="- Verifikasi dokumen fisik di Balai Desa\n- Input data koordinat peta bidang"
-                    android:textColor="#333333" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="Aksi Cepat"
                 android:textColor="#333333"
                 android:textSize="18sp"
@@ -238,6 +153,43 @@
                     app:strokeColor="@color/orange_primary" />
 
             </GridLayout>
+
+            <!-- // BARU: Riwayat Aktivitas (Room Database) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Aktivitas Terakhir"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- // P12 : Placeholder jika riwayat kosong -->
+            <TextView
+                android:id="@+id/tvEmptyHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_card_white"
+                android:elevation="2dp"
+                android:padding="20dp"
+                android:text="Belum ada aktivitas"
+                android:textAlignment="center"
+                android:textColor="#888888"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_card_white"
+                android:elevation="2dp"
+                android:padding="12dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_history" />
 
             <TextView
                 android:layout_width="wrap_content"

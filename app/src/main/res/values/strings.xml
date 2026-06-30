@@ -28,4 +28,16 @@
     <string name="p11_news_source_format">%1$s • %2$s</string>
     <string name="p11_news_open_link">Buka berita</string>
     <string name="p11_news_link_error">Link berita tidak bisa dibuka.</string>
+
+    <!-- Fitur Reminder -->
+    <string name="home_reminder_button">Ingatkan Survey</string>
+    <string name="home_reminder_dialog_title">Setel Pengingat Survey</string>
+    <string name="home_reminder_dialog_hint">Berapa menit lagi? (Contoh: 1)</string>
+    <string name="home_reminder_dialog_set">Setel</string>
+    <string name="home_reminder_dialog_cancel">Batal</string>
+    <string name="home_reminder_success">Pengingat disetel %1$d menit dari sekarang</string>
+    <string name="home_reminder_invalid">Masukkan menit yang valid</string>
+    <string name="home_reminder_notif_title">Waktunya Survey Lahan!</string>
+    <string name="home_reminder_notif_message">Ayo lakukan pengecekan batas tanah di desa binaan sekarang.</string>
+    <string name="home_permission_denied">Izin notifikasi ditolak</string>
 </resources>

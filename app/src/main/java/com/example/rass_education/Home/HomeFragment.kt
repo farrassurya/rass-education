@@ -1,14 +1,20 @@
 package com.example.rass_education.Home
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -26,6 +32,7 @@ import com.example.rass_education.LoginActivity
 import com.example.rass_education.Home.tugas_p4.Custom1Activity
 import com.example.rass_education.Home.tugas_p4.Custom2Activity
 import com.example.rass_education.Home.tugas_p6.WebViewActivity
+import com.example.rass_education.utils.NotificationHelper
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -43,6 +50,19 @@ class HomeFragment : Fragment() {
     private lateinit var historyAdapter: HistoryAdapter
     private val database by lazy { AppDatabase.getDatabase(requireContext()) }
 
+    // Utils
+    private lateinit var notificationHelper: NotificationHelper
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            showReminderDialog()
+        } else {
+            Toast.makeText(requireContext(), getString(R.string.home_permission_denied), Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,6 +73,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        notificationHelper = NotificationHelper(requireContext())
 
         val sharedPref = requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
         val username = sharedPref.getString("username", "Farrassurya") ?: "Farrassurya"
@@ -118,34 +140,77 @@ class HomeFragment : Fragment() {
 
     private fun setupActionButtons() {
         binding.btnRumus.setOnClickListener {
-            // P12 : Simpan log aktivitas
             saveHistory("Membuka Rumus Lahan")
             startActivity(Intent(requireContext(), HitungBangunActivity::class.java))
         }
 
         binding.btnFocus.setOnClickListener {
-            // P12 : Simpan log aktivitas
             saveHistory("Membuka Zona Pantau")
             startActivity(Intent(requireContext(), Custom1Activity::class.java))
         }
 
         binding.btnInspirasi.setOnClickListener {
-            // P12 : Simpan log aktivitas
             saveHistory("Membuka Galeri Desa")
             startActivity(Intent(requireContext(), Custom2Activity::class.java))
         }
 
         binding.btnWebView.setOnClickListener {
-            // P12 : Simpan log aktivitas
             saveHistory("Membuka Portal Web")
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
 
         binding.btnTabLayout.setOnClickListener {
-            // P12 : Simpan log aktivitas
             saveHistory("Membuka Tab Layout")
             startActivity(Intent(requireContext(), TabLayoutActivity::class.java))
         }
+
+        // Fitur Pengingat Survey
+        binding.btnReminder.setOnClickListener {
+            checkNotificationPermission()
+        }
+    }
+
+    private fun checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+                showReminderDialog()
+            } else {
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        } else {
+            showReminderDialog()
+        }
+    }
+
+    private fun showReminderDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle(getString(R.string.home_reminder_dialog_title))
+        
+        val input = EditText(requireContext())
+        input.hint = getString(R.string.home_reminder_dialog_hint)
+        input.inputType = android.text.InputType.TYPE_CLASS_NUMBER
+        builder.setView(input)
+
+        builder.setPositiveButton(getString(R.string.home_reminder_dialog_set)) { _, _ ->
+            val minutes = input.text.toString().toIntOrNull()
+            if (minutes != null && minutes > 0) {
+                notificationHelper.scheduleReminder(
+                    minutes,
+                    getString(R.string.home_reminder_notif_title),
+                    getString(R.string.home_reminder_notif_message)
+                )
+                saveHistory("Menyetel Pengingat Survey ($minutes menit)")
+                Toast.makeText(requireContext(), getString(R.string.home_reminder_success, minutes), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), getString(R.string.home_reminder_invalid), Toast.LENGTH_SHORT).show()
+            }
+        }
+        builder.setNegativeButton(getString(R.string.home_reminder_dialog_cancel), null)
+        builder.show()
     }
 
     private fun showLogoutDialog(sharedPref: android.content.SharedPreferences) {

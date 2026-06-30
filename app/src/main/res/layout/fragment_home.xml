@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- // MODIF: Header dengan Background Drawable Gradient -->
+        <!-- Header -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="220dp"
@@ -50,7 +50,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- // MODIF: TextInputLayout Pencarian -->
+            <!-- Search Bar -->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -82,31 +82,44 @@
                 android:alignmentMode="alignMargins"
                 android:columnCount="2">
 
+                <!--
+                     UKURAN EKSTRA KOMPAK (40dp) & SEJAJAR 100%:
+                     Semua pakai inset 0dp agar tinggi 40dp adalah murni ukuran tombol tanpa padding luar.
+                -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRumus"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="0dp"
-                    android:layout_height="65dp"
+                    android:layout_height="40dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
+                    android:layout_margin="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="Rumus Lahan"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
+                    android:textSize="11sp"
                     app:backgroundTint="@color/orange_primary"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="8dp"
                     app:icon="@drawable/ic_home"
-                    app:iconTint="@color/white" />
+                    app:iconSize="14dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnFocus"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
-                    android:layout_height="65dp"
+                    android:layout_height="40dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
+                    android:layout_margin="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="Zona Pantau"
+                    android:textAllCaps="false"
                     android:textColor="@color/orange_primary"
-                    app:cornerRadius="12dp"
+                    android:textSize="11sp"
+                    app:cornerRadius="8dp"
                     app:icon="@drawable/ic_home"
+                    app:iconSize="14dp"
                     app:iconTint="@color/orange_primary"
                     app:strokeColor="@color/orange_primary" />
 
@@ -114,47 +127,79 @@
                     android:id="@+id/btnInspirasi"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
-                    android:layout_height="65dp"
+                    android:layout_height="40dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
+                    android:layout_margin="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="Galeri Desa"
+                    android:textAllCaps="false"
                     android:textColor="@color/orange_primary"
-                    app:cornerRadius="12dp"
+                    android:textSize="11sp"
+                    app:cornerRadius="8dp"
                     app:icon="@drawable/ic_info"
+                    app:iconSize="14dp"
                     app:iconTint="@color/orange_primary"
                     app:strokeColor="@color/orange_primary" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnWebView"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="0dp"
-                    android:layout_height="65dp"
+                    android:layout_height="40dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
+                    android:layout_margin="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="Portal Web"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
+                    android:textSize="11sp"
                     app:backgroundTint="@color/orange_primary"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="8dp"
                     app:icon="@drawable/ic_info"
-                    app:iconTint="@color/white" />
+                    app:iconSize="14dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnTabLayout"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
-                    android:layout_height="65dp"
+                    android:layout_height="40dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
+                    android:layout_margin="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="Tab Layout"
+                    android:textAllCaps="false"
                     android:textColor="@color/orange_primary"
-                    app:cornerRadius="12dp"
+                    android:textSize="11sp"
+                    app:cornerRadius="8dp"
                     app:icon="@drawable/ic_settings"
+                    app:iconSize="14dp"
                     app:iconTint="@color/orange_primary"
                     app:strokeColor="@color/orange_primary" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReminder"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/home_reminder_button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:backgroundTint="@color/orange_primary"
+                    app:cornerRadius="8dp"
+                    app:icon="@android:drawable/ic_lock_idle_alarm"
+                    app:iconSize="14dp" />
+
             </GridLayout>
 
-            <!-- // BARU: Riwayat Aktivitas (Room Database) -->
+            <!-- Riwayat Aktivitas -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -164,7 +209,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- // P12 : Placeholder jika riwayat kosong -->
             <TextView
                 android:id="@+id/tvEmptyHistory"
                 android:layout_width="match_parent"
@@ -187,10 +231,10 @@
                 android:elevation="2dp"
                 android:padding="12dp"
                 android:nestedScrollingEnabled="false"
-                android:visibility="visible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_history" />
 
+            <!-- Berita -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -215,7 +259,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_news" />
 

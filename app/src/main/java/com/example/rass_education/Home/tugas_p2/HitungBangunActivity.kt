@@ -3,13 +3,13 @@ package com.example.rass_education.Home.tugas_p2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.rass_education.R
 import com.example.rass_education.Home.tugas_p4.PageContract
 
@@ -22,26 +22,32 @@ class HitungBangunActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hitung_bangun)
 
-        val sourceTitle = intent.getStringExtra(PageContract.EXTRA_PAGE_TITLE)
-            ?: getString(R.string.p4_home_title)
-        val sourceDescription = intent.getStringExtra(PageContract.EXTRA_PAGE_DESCRIPTION)
-            ?: getString(R.string.p4_home_description)
-
-        findViewById<TextView>(R.id.tvSourceTitleBangun).text = sourceTitle
-        findViewById<ImageButton>(R.id.btnBackBangunMain).setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
-
-        // 1. Inisialisasi Layout Container (Biar bisa disembunyiin/tampilin)
+        // 1. Inisialisasi Layout Container
         val layoutMenu = findViewById<LinearLayout>(R.id.layoutMenu)
         val layoutPersegi = findViewById<LinearLayout>(R.id.layoutPersegi)
         val layoutTabung = findViewById<LinearLayout>(R.id.layoutTabung)
 
-        // 2. Inisialisasi Tombol Navigasi (Mulai Hitung & Kembali)
+        val sourceTitle = intent.getStringExtra(PageContract.EXTRA_PAGE_TITLE)
+            ?: getString(R.string.p4_home_title)
+        
+        findViewById<TextView>(R.id.tvSourceTitleBangun).text = sourceTitle
+        
+        // Tombol Back Utama di bagian luar
+        findViewById<ImageButton>(R.id.btnBackBangunMain).setOnClickListener {
+            if (layoutPersegi.isVisible || layoutTabung.isVisible) {
+                // Jika sedang di halaman hitung, kembali ke menu utama
+                layoutPersegi.isVisible = false
+                layoutTabung.isVisible = false
+                layoutMenu.isVisible = true
+            } else {
+                // Jika sudah di menu utama, baru keluar halaman
+                onBackPressedDispatcher.onBackPressed()
+            }
+        }
+
+        // 2. Inisialisasi Tombol Navigasi (Mulai Hitung)
         val btnMenuPersegi = findViewById<Button>(R.id.btnMenuPersegi)
         val btnMenuTabung = findViewById<Button>(R.id.btnMenuTabung)
-        val btnBackPersegi = findViewById<ImageButton>(R.id.btnBackPersegi)
-        val btnBackTabung = findViewById<ImageButton>(R.id.btnBackTabung)
 
         // 3. Inisialisasi Komponen Hitung Luas
         val etPanjang = findViewById<EditText>(R.id.etPanjang)
@@ -59,27 +65,16 @@ class HitungBangunActivity : AppCompatActivity() {
 
         // Klik "Mulai Hitung" di Persegi Panjang
         btnMenuPersegi.setOnClickListener {
-            layoutMenu.visibility = View.GONE
-            layoutPersegi.visibility = View.VISIBLE
+            layoutMenu.isVisible = false
+            layoutPersegi.isVisible = true
             Log.d(TAG, "Navigasi ke Halaman Persegi Panjang")
         }
 
         // Klik "Mulai Hitung" di Tabung
         btnMenuTabung.setOnClickListener {
-            layoutMenu.visibility = View.GONE
-            layoutTabung.visibility = View.VISIBLE
+            layoutMenu.isVisible = false
+            layoutTabung.isVisible = true
             Log.d(TAG, "Navigasi ke Halaman Tabung")
-        }
-
-        // Tombol Kembali
-        btnBackPersegi.setOnClickListener {
-            layoutPersegi.visibility = View.GONE
-            layoutMenu.visibility = View.VISIBLE
-        }
-
-        btnBackTabung.setOnClickListener {
-            layoutTabung.visibility = View.GONE
-            layoutMenu.visibility = View.VISIBLE
         }
 
         // --- LOGIKA PERHITUNGAN ---

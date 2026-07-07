@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEF2F7"
+    android:background="#FDFCF9"
     android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="24dp">
 
         <ImageButton
@@ -20,22 +19,28 @@
             android:contentDescription="@string/p4_back"
             android:padding="6dp"
             android:src="@android:drawable/ic_menu_revert"
-            app:tint="@color/p4_text_primary" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/orange_primary" />
 
         <!-- ================= HOME / MENU UTAMA ================= -->
         <LinearLayout
             android:id="@+id/layoutMenu"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBackBangunMain">
 
             <TextView
                 android:id="@+id/tvSourceTitleBangun"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Judul dari halaman utama"
-                android:textColor="@color/p4_primary"
+                android:textColor="@color/orange_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -61,16 +66,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp"
-                app:strokeWidth="0dp"
-                android:clickable="true"
-                android:focusable="true">
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#2ECC71"
+                    android:background="@color/orange_primary"
                     android:orientation="vertical"
                     android:padding="20dp">
 
@@ -86,7 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hitung luas dengan panjang dan lebar"
-                        android:textColor="#E0F7FA"
+                        android:textColor="@color/orange_light"
                         android:textSize="14sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -96,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Mulai Hitung"
-                        android:textColor="#2ECC71"
+                        android:textColor="@color/orange_primary"
                         app:backgroundTint="#FFFFFF"
                         app:cornerRadius="10dp" />
                 </LinearLayout>
@@ -107,16 +112,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp"
-                app:strokeWidth="0dp"
-                android:clickable="true"
-                android:focusable="true">
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#3498DB"
+                    android:background="@color/orange_dark"
                     android:orientation="vertical"
                     android:padding="20dp">
 
@@ -132,7 +137,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hitung volume dengan jari-jari dan tinggi"
-                        android:textColor="#E1F5FE"
+                        android:textColor="@color/orange_light"
                         android:textSize="14sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -142,7 +147,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Mulai Hitung"
-                        android:textColor="#3498DB"
+                        android:textColor="@color/orange_dark"
                         app:backgroundTint="#FFFFFF"
                         app:cornerRadius="10dp" />
                 </LinearLayout>
@@ -153,26 +158,21 @@
         <!-- ================= HALAMAN PERSEGI PANJANG ================= -->
         <LinearLayout
             android:id="@+id/layoutPersegi"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
-            android:visibility="gone">
-
-            <ImageButton
-                android:id="@+id/btnBackPersegi"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@android:drawable/ic_menu_revert"
-                app:tint="#2D3436" />
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBackBangunMain">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
-                app:strokeColor="#DCDDE1"
+                app:strokeColor="@color/orange_light"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -185,7 +185,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Luas Persegi Panjang"
-                        android:textColor="#2ECC71"
+                        android:textColor="@color/orange_primary"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -199,8 +199,8 @@
                         app:boxCornerRadiusBottomStart="12dp"
                         app:boxCornerRadiusTopEnd="12dp"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxStrokeColor="#2ECC71"
-                        app:hintTextColor="#2ECC71">
+                        app:boxStrokeColor="@color/orange_primary"
+                        app:hintTextColor="@color/orange_primary">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPanjang"
@@ -219,8 +219,8 @@
                         app:boxCornerRadiusBottomStart="12dp"
                         app:boxCornerRadiusTopEnd="12dp"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxStrokeColor="#2ECC71"
-                        app:hintTextColor="#2ECC71">
+                        app:boxStrokeColor="@color/orange_primary"
+                        app:hintTextColor="@color/orange_primary">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etLebar"
@@ -237,14 +237,14 @@
                         android:text="HITUNG"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:backgroundTint="#2ECC71"
+                        app:backgroundTint="@color/orange_primary"
                         app:cornerRadius="12dp" />
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        app:cardBackgroundColor="#F1F9F5"
+                        app:cardBackgroundColor="@color/orange_light"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -255,7 +255,7 @@
                             android:gravity="center"
                             android:padding="16dp"
                             android:text="Hasil akan muncul di sini"
-                            android:textColor="#27AE60"
+                            android:textColor="@color/orange_dark"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </com.google.android.material.card.MaterialCardView>
@@ -267,26 +267,21 @@
         <!-- ================= HALAMAN TABUNG ================= -->
         <LinearLayout
             android:id="@+id/layoutTabung"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
-            android:visibility="gone">
-
-            <ImageButton
-                android:id="@+id/btnBackTabung"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@android:drawable/ic_menu_revert"
-                app:tint="#2D3436" />
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBackBangunMain">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
-                app:strokeColor="#DCDDE1"
+                app:strokeColor="@color/orange_light"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -299,7 +294,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Volume Tabung"
-                        android:textColor="#3498DB"
+                        android:textColor="@color/orange_dark"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -313,8 +308,8 @@
                         app:boxCornerRadiusBottomStart="12dp"
                         app:boxCornerRadiusTopEnd="12dp"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxStrokeColor="#3498DB"
-                        app:hintTextColor="#3498DB">
+                        app:boxStrokeColor="@color/orange_dark"
+                        app:hintTextColor="@color/orange_dark">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etJari"
@@ -333,8 +328,8 @@
                         app:boxCornerRadiusBottomStart="12dp"
                         app:boxCornerRadiusTopEnd="12dp"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxStrokeColor="#3498DB"
-                        app:hintTextColor="#3498DB">
+                        app:boxStrokeColor="@color/orange_dark"
+                        app:hintTextColor="@color/orange_dark">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etTinggi"
@@ -351,14 +346,14 @@
                         android:text="HITUNG"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:backgroundTint="#3498DB"
+                        app:backgroundTint="@color/orange_dark"
                         app:cornerRadius="12dp" />
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        app:cardBackgroundColor="#EAF2F8"
+                        app:cardBackgroundColor="@color/orange_light"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -369,7 +364,7 @@
                             android:gravity="center"
                             android:padding="16dp"
                             android:text="Hasil akan muncul di sini"
-                            android:textColor="#2980B9"
+                            android:textColor="@color/orange_dark"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </com.google.android.material.card.MaterialCardView>
@@ -378,5 +373,5 @@
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

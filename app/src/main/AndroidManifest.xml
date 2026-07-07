@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- // MODIF: Tambah permission internet untuk WebView -->
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -15,28 +16,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rasseducation">
+
         <activity
             android:name=".BaseActivity"
             android:exported="false" />
-        <!-- // MODIF: SplashScreen sebagai Launcher -->
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- // BARU: Register & Verifikasi Activity -->
         <activity
             android:name=".Home.UTS.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".Home.UTS.VerifikasiActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -59,19 +58,14 @@
             android:name=".Home.tugas_p2.HitungBangunActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-
-        <!-- // BARU: TabLayout Activity Tugas 10 -->
+            android:name=".MainActivity" android:exported="false" />
         <activity
             android:name=".Home.tugas_p10.TabLayoutActivity"
             android:exported="false" />
 
-        <!-- Receiver untuk Reminder -->
         <receiver
             android:name=".utils.ReminderReceiver"
             android:enabled="true"
             android:exported="false" />
     </application>
-
 </manifest>

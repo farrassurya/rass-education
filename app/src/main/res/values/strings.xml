@@ -40,4 +40,8 @@
     <string name="home_reminder_notif_title">Waktunya Survey Lahan!</string>
     <string name="home_reminder_notif_message">Ayo lakukan pengecekan batas tanah di desa binaan sekarang.</string>
     <string name="home_permission_denied">Izin notifikasi ditolak</string>
+    <string name="p10_land_nib">NIB: %1$s</string>
+    <string name="p10_land_owner">Pemilik: %1$s</string>
+    <string name="p10_land_area">Luas: %1$s m²</string>
+    <string name="p10_land_status">Status: %1$s</string>
 </resources>

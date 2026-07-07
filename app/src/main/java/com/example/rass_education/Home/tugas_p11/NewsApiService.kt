@@ -14,7 +14,7 @@ interface NewsApiService {
 }
 
 object NewsApiClient {
-    private const val BASE_URL = "https://api.spaceflightnewspi.net/v4/"
+    private const val BASE_URL = "https://api.spaceflightnewsapi.net/v4/"
 
     val service: NewsApiService by lazy {
         Retrofit.Builder()
@@ -24,5 +24,3 @@ object NewsApiClient {
             .create(NewsApiService::class.java)
     }
 }
-
-
